@@ -1,3 +1,13 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/huochunpeng/aurelia-getter-throttle/compare/v1.0.2...v1.0.3) (2018-05-22)
+
+
+### Features
+
+* use {enumerable: false} on innerProperty to make it less intrusive ([91b9e18](https://github.com/huochunpeng/aurelia-getter-throttle/commit/91b9e18))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/huochunpeng/aurelia-getter-throttle/compare/v1.0.1...v1.0.2) (2018-05-22)
 
