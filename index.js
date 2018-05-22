@@ -4,26 +4,34 @@ exports.getterThrottle = function (delay) {
   return function(target, key, descriptor) {
     var dependencies = descriptor.get.dependencies;
     var originalGetter = descriptor.get;
-    var innerPropertyName = '_throttle_' + key;
+    var innerPropertyName = '_au_gt_' + key;
+
+    var clearInnerProperty = function() {
+      delete this[innerPropertyName];
+    };
 
     descriptor.get = function() {
       if (this.hasOwnProperty(innerPropertyName)) {
         return this[innerPropertyName];
       }
 
-      this[innerPropertyName] = originalGetter.call(this);
+      Object.defineProperty(this, innerPropertyName, {
+        value: originalGetter.call(this),
+        configurable: true,
+        enumerable: false,
+        writable: true
+      });
 
-      setTimeout((function() {
-        delete this[innerPropertyName];
-      }).bind(this), delay);
+      setTimeout(clearInnerProperty.bind(this), delay);
 
       return this[innerPropertyName];
     };
 
     if (dependencies) {
       descriptor.get.dependencies = dependencies;
+      delete originalGetter.dependencies;
     }
 
     return descriptor;
   };
-}
+};
