@@ -38,3 +38,25 @@ export class YourComponent {
   }
 }
 ```
+
+But be careful with the cached value:
+
+```js
+@getterThrottle()
+get hasError() {
+  return !!this.errors;
+}
+
+someLogic() {
+  this.errors = null;
+  // hasError is false and cached
+  if (this.hasError) {}
+
+  // ...
+
+  this.errors = something;
+  // hasError is still false, as it's cached.
+  // you'd better check this.errors directly.
+  if (this.hasError) {}
+}
+```
