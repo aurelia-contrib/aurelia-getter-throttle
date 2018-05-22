@@ -1,5 +1,7 @@
 # aurelia-getter-throttle
 
+Throttle getter to make Aurelia rendering efficient.
+
 If you use a getter property multiple times in html template, Aurelia will call the getter multiple times even within one rendering cycle, no matter whether you use computedFrom or dirty-check properties.
 
 The behaviour is costly if your getter is not cheap to run.
