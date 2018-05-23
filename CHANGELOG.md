@@ -1,3 +1,18 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/aurelia-contrib/aurelia-getter-throttle/compare/v1.0.3...v1.0.4) (2018-05-23)
+
+
+### Bug Fixes
+
+* fix broken TypeScript definition file ([b365b3c](https://github.com/aurelia-contrib/aurelia-getter-throttle/commit/b365b3c))
+
+
+### Features
+
+* move project to aurelia-contrib ([33b50cc](https://github.com/aurelia-contrib/aurelia-getter-throttle/commit/33b50cc))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/huochunpeng/aurelia-getter-throttle/compare/v1.0.2...v1.0.3) (2018-05-22)
 

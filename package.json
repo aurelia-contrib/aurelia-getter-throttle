@@ -1,6 +1,6 @@
 {
   "name": "aurelia-getter-throttle",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Throttle getter to make Aurelia rendering efficient",
   "main": "index.js",
   "types": "index.d.ts",
