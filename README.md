@@ -10,7 +10,7 @@ This `getterThrottle` decorator works for both computedFrom and dirty-check prop
 
 Usage:
 
-```
+```sh
 npm i aurelia-getter-throttle # or yarn add aurelia-getter-throttle
 ```
 
