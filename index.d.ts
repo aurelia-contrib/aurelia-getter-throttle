@@ -1,1 +1,1 @@
-export declare function getterThrottle(delay?: number)): any;
+export declare function getterThrottle(delay?: number): any;
