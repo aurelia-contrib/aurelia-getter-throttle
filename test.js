@@ -1,6 +1,13 @@
 import test from 'tape';
 import {getterThrottle} from './index';
 
+function computedFrom(...rest) {
+  return function(target, key, descriptor) {
+    descriptor.get.dependencies = rest;
+    return descriptor;
+  };
+}
+
 class A {
   constructor() {
     Object.defineProperties(this, {
@@ -16,9 +23,15 @@ class A {
   }
 
   @getterThrottle()
+  @computedFrom('a', 'b')
   get foo() {
     this.fooCount += 1;
     return 'foo';
+  }
+
+  @computedFrom('c', 'd')
+  @getterThrottle()
+  get foo2() {
   }
 
   @getterThrottle(100)
@@ -27,6 +40,20 @@ class A {
     return 'bar';
   }
 }
+
+test('getterThrottle preserves computed from', t => {
+  t.deepEqual(
+    Object.getOwnPropertyDescriptor(A.prototype, 'foo').get.dependencies,
+    ['a', 'b'],
+    'when above computedFrom'
+  );
+  t.deepEqual(
+    Object.getOwnPropertyDescriptor(A.prototype, 'foo2').get.dependencies,
+    ['c', 'd'],
+    'when below computedFrom'
+  );
+  t.end();
+});
 
 test('getterThrottle caches getter value in same run-loop by default', t => {
   let a = new A();
