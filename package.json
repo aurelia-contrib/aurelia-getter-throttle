@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huochunpeng/aurelia-getter-throttle.git"
+    "url": "git+https://github.com/aurelia-contrib/aurelia-getter-throttle.git"
   },
   "keywords": [
     "Aurelia"
@@ -24,9 +24,9 @@
   "author": "Chunpeng Huo",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/huochunpeng/aurelia-getter-throttle/issues"
+    "url": "https://github.com/aurelia-contrib/aurelia-getter-throttle/issues"
   },
-  "homepage": "https://github.com/huochunpeng/aurelia-getter-throttle",
+  "homepage": "https://github.com/aurelia-contrib/aurelia-getter-throttle",
   "devDependencies": {
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-preset-env": "^1.7.0",
