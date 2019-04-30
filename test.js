@@ -1,5 +1,5 @@
-import test from 'tape';
-import {getterThrottle} from './index';
+const test = require('tape');
+const {getterThrottle} = require('./index');
 
 function computedFrom(...rest) {
   return function(target, key, descriptor) {
