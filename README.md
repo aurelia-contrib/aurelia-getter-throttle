@@ -1,4 +1,4 @@
-# aurelia-getter-throttle [![Build Status](https://travis-ci.org/aurelia-contrib/aurelia-getter-throttle.svg?branch=master)](https://travis-ci.org/aurelia-contrib/aurelia-getter-throttle)
+# aurelia-getter-throttle ![CI](https://github.com/aurelia-contrib/aurelia-getter-throttle/workflows/CI/badge.svg)
 
 Throttle getter to make Aurelia rendering efficient.
 
